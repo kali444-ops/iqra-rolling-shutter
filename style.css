@@ -18,8 +18,9 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .logo {
-            font-size: 1.5em;
-            font-weight: bold;
+            height: 40px;
+            width: 40px;
+            background-color: #424042;
         }
         nav ul {
             list-style: none;
@@ -46,7 +47,10 @@
         .hero p {
             font-size: 1.2em;
             margin-bottom: 20px;
+            color: #424042;
+            font-weight:400;
         }
+    
         .cta-buttons {
             display: flex;
             justify-content: center;
@@ -105,6 +109,14 @@
             align-items: center;
             justify-content: center;
             margin-bottom: 10px;
+        }
+         .service-img-p{
+        margin-bottom:10px;
+         }
+        .service-image img {
+        height:100%;
+        width:100%;
+        object-fit: cover;
         }
         .lead-form {
             padding: 20px;
