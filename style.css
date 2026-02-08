@@ -18,9 +18,13 @@
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .logo {
-            height: 40px;
-            width: 40px;
+            height:100px;
+            width:100px;
             background-color: #424042;
+        }
+        .logo img{
+        height :100%;
+        width :100%;
         }
         nav ul {
             list-style: none;
@@ -229,14 +233,14 @@
             gap: 10px;
             margin-bottom: 10px;
         }
-        .social-icon {
-            width: 30px;
-            height: 30px;
-            background-color: #ddd;
+        .map-icon {
+            width: 40px;
+            height: 40px;
             display: flex;
             align-items: center;
             justify-content: center;
         }
+       
         .sticky-bar {
             position: fixed;
             bottom: 0;
