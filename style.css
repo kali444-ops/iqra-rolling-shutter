@@ -1,4 +1,4 @@
-*{  margin:0%;
+*{        margin:0%;
           padding:0%;
           box-sizing:border-box;
         }
@@ -13,13 +13,13 @@
             background-color: #fff;
             padding: 10px;
             display: flex;
-            justify-content: space-between;
+            justify-content:space-between;
             align-items: center;
             box-shadow: 0 2px 5px rgba(0,0,0,0.1);
         }
         .logo {
-            height:110px;
-            aspect-ratio: 1/1;
+            height:100px;
+            width:100px;
         }
 
         .logo img{
@@ -294,7 +294,33 @@
             .sticky-bar {
                 display: none;
             }
+            .logo{
+            height: 130px;
+            width: 130px;
+            }
+            .hero-image {
+            width: 100%;
+            height: 500px;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
         }
+        .hero-image  video{
+object-fit: cover;
+        }
+        .service-image{
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        gap: 20px;
+        }
+          .service-image{
+          width:40%;
+          height: auto;
+        }
+        
+         }
 /* UTILITY SECTION*/
 video{
 height:100%;
