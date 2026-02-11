@@ -20,7 +20,7 @@
             </ul>
         </nav>
     </header>
-<!-HERO SECTION START->
+<!--HERO SECTION START-->
     <section id="home" class="hero">
         <h1 style="font-family:serif;white-space:nowrap;font-size:25px;color:red;">IQRA ROLLING SHUTTER</h1>
         <p class="sub-heading">Trusted Rolling Shutter Manufacturer & Service Provider</p>
@@ -32,9 +32,9 @@
         <video src="herovid.mp4" loop autoplay muted></video>
         </div>
     </section>
-<!-HERO SECTION END->
+<!--HERO SECTION END-->
     
-<!-ABOUT SECTION START->
+<!--ABOUT SECTION START-->
     <div class="about" id="about">
     <h2 class="about-head">About Us</h2>
     
@@ -76,9 +76,9 @@
   </ul>
     </div>
 
-<!-ABOUT SECTION END->
+<!--ABOUT SECTION END-->
     
-<!-SERVICES SECTION START->
+<!--SERVICES SECTION START-->
     <section id="services" class="services">
         <h2>OUR SERVICES</h2>
         <div class="service-cards">
@@ -121,44 +121,90 @@
             </div>
         </div>
     </section>
-    <!-SERVICES  SECTION END->
+    <!--SERVICES  SECTION END-->
         
-    <!- FORM SECTION START->
-    <section class="lead-form">
-        <h2>FILL UP </h2>
-        <form>
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="tel"  name="phoneno"  placeholder="Phone Number" required>
-            <select required>
-                <option value="">Service Type</option>
-                <option value="service1">service1</option>
-                <option value="service2">service2</option>
-                <option value="service3">service3</option>
-                <option value="service4">service4</option>
-                <option value="service5">service5</option>
-                <option value="service6">service6</option>
-            </select>
-            <textarea placeholder="Message" rows="4"></textarea>
-            <button type="submit">Submit</button>
-        </form>
-    </section>
-        <!-FORM SECTION END->
+<!-- FORM SECTION START -->
+<div class="lead-form">
+<h2>FILL UP</h2>
+<form id="contactForm">
+  <input type="text" name="name" placeholder="Name" required>
+  <input type="tel" name="phone" placeholder="Phone Number" required>
+
+  <select name="service" required>
+    <option value="">Service Type</option>
+    <option value="manual">Manual Rolling Shutter</option>
+    <option value="motorized">Motorized Rolling Shutter</option>
+    <option value="perforated">Perforated Rolling Shutter</option>
+    <option value="gear">Gear Operated Rolling Shutter</option>
+    <option value="grill">Grill Rolling Shutter</option>
+    <option value="industrial">Industrial Rolling Shutter</option>
+    <option value="installation">Installation</option>
+    <option value="maintenance">Maintenance</option>
+  </select>
+  <textarea name="message" placeholder="Message"></textarea>
+  <input type="text" name="honeypot" style="display:none" tabindex="-1" autocomplete="off">
+  <button type="submit">Submit</button>
+</form>
+</div>
+<script>
+  // Replace this with your actual Google Web App URL
+  const scriptURL = 'https://script.google.com/macros/s/AKfycbyzG5eo4pkJexrffo-T1yJ5LLgYLiZ7Fhl7IQoDDQYe8Z6vj4q9Z2e6rK3vekJUWztPXQ/exec';
+  const form = document.forms['contactForm'];
+
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+
+    // 1. Honeypot check (Front-end side)
+    // If the hidden field is filled, we stop the submission immediately
+    if (form['honeypot'].value !== "") {
+      console.warn("Bot detected.");
+      return;
+    }
+
+    // 2. UI Feedback: Disable button while sending
+    const submitBtn = form.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerText;
+    submitBtn.disabled = true;
+    submitBtn.innerText = "Sending...";
+
+    // 3. Send the data
+    fetch(scriptURL, { 
+      method: 'POST', 
+      body: new FormData(form)
+    })
+    .then(response => {
+      alert("Success! Your message has been sent.");
+      form.reset();
+    })
+    .catch(error => {
+      console.error('Error!', error.message);
+      alert("There was an error sending your message. Please try again.");
+    })
+    .finally(() => {
+      // 4. Reset button state
+      submitBtn.disabled = false;
+      submitBtn.innerText = originalText;
+    });
+  });
+</script>
+<!-- FORM SECTION END -->
+       
             
-            <!- GALLERY SECTION START->
+<!--GALLERY SECTION START-->
     <section id="gallery" class="gallery">
         <h2>Gallery</h2>
         <div class="gallery-images">
-            <div class="gallery-image">[Your Image Here]</div>
-            <div class="gallery-image">[Your Image Here]</div>
-            <div class="gallery-image">[Your Image Here]</div>
-            <div class="gallery-image">[Your Image Here]</div>
-            <div class="gallery-image">[Your Image Here]</div>
-            <div class="gallery-image">[Your Image Here]</div>
+            <div class="gallery-image"><img src="gallery1.png.jpeg" ></div>
+            <div class="gallery-image"><img src="gallery2.png.jpeg" ></div>
+            <div class="gallery-image"><img src="gallery3.png.jpeg" ></div>
+            <div class="gallery-image"><img src="gallery4.png.jpeg" ></div>
+            <div class="gallery-image"><img src="gallery5.png.jpeg" ></div>
+            <div class="gallery-image"><img src="gallery6.png.jpeg" ></div>
         </div>
     </section>
- <!-GALLERY SECTION END ->
+ <!--GALLERY SECTION END -->
      
-  <!-FEEDBACK SECTION START ->
+  <!--FEEDBACK SECTION START -->
     <section class="testimonials">
         <h2>Coustomers Feedback</h2>
         <div class="testimonial">
@@ -174,10 +220,10 @@
             <p>Parveen shaikh -7721042439</p>
         </div>
     </section>
-  <!-FEEDBACK SECTION END ->
+  <!--FEEDBACK SECTION END -->
       
      
-  <!-CONTACT & MAP SECTION START->
+  <!--CONTACT & MAP SECTION START-->
     <section id="contact" class="contact">
         <h2>Contact details</h2>
         <div class="contact-info">
@@ -199,9 +245,9 @@
   </iframe>
   </div>
   </section>
-  <!-CONTACT &MAP SECTION END ->
+  <!--CONTACT &MAP SECTION END -->
   
-   <!-FOOTER SECTION START->
+   <!--FOOTER SECTION START-->
     <footer>
         <div class="social-icons">
             <div class="map-icon"> <a href="https://mail.google.com/mail/u/0/#inbox?compose=DmwnWrRmTwwlpgkJkKzrCghrzVWpNqNGbBhmMMzpZcPKxchtrWFmpWVtVdhVbQrdQpPtkBjcKnbq" target="_blank"><img src="email-icon.png"  height="100%" width="100%"></a></div>
@@ -210,14 +256,14 @@
         </div>
         <p style="font-size:10px;">&copy; 2026 Iqra Rolling Shutter Services. All Rights Reserved.</p>
     </footer>
-     <!-FOOTER SECTION END ->
+     <!--FOOTER SECTION END -->
          
-          <!-BOTTOM BANNER ->
+          <!--BOTTOM BANNER -->
     <div class="sticky-bar">
         <a href="tel:9511945277" class="sticky-button">Call</a>
         <a href="https://wa.me/9511945277" class="sticky-button">WhatsApp</a>
     </div>
-           <!-BOTTOM BANER END ->
+           <!--BOTTOM BANER END -->
     
 </body>
 </html>
